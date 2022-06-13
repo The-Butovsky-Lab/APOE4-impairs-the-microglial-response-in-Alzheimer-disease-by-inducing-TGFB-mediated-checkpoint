@@ -10,12 +10,12 @@ Species <- "mouse"            #<- Either "mouse" or "human" <- make sure to put 
 
 # Location of Files for analysis
 Location_of_quant_Data_Files <-""  #  <--- Find the location of the folder (sometimes called transcripts_quant) that contains folders for all samples with quant.sf file in them
-Name_of_Metadata_File <- ""  # name of your metadata xlsx file. 
+Name_of_Metadata_File <- ".xlsx"  # name of your metadata xlsx file. 
 
 
 # Extracting data from Metadata excel file 
-Position_Column_Name <- ""        #  <--- Well ID/Position on Plate
-Number_of_variables_to_compare <-    #  <--- Can be 1, 2 or 3 different variables to compare. e.g., looking at effects of disease and cre is a 2 comparison 
+Position_Column_Name <- "Well"        #  <--- Well ID/Position on Plate
+Number_of_variables_to_compare <- 1   #  <--- Can be 1, 2 or 3 different variables to compare. e.g., looking at effects of disease and cre is a 2 comparison 
 Metadata1_Column_Name <- ""       #  <--- The more significant comparison (example: APP vs WT) 
 
 # ____________Variable 2 ONLY for multiple comparison (if you have 2 or 3 different variables to compare) ____________
@@ -25,47 +25,52 @@ Metadata2_Column_Name <- ""   #  <--- The sub-comparison/secondary comparison (e
 Metadata3_Column_Name <- ""         #  <--- The last-comparison/most "sub" comparison (example:  KI vs KO)
 
 
+# Q:  Do you have column for Order in your Data Set?
+Is_Order_in_excelfile <- 'No' # Is there a column name that groups each group (from 1-x), number as you like to see on heatmap, with 1 to the far left 
+Order_column <- 'Order' # name of order column in excel sheet
 
 # Q:  Do you have Outliers in your Data Set?
-Outliers_in_Data <- ""              #  <--- Are there outliers in your data? "Yes" or "No"
-Outliers_Column_Name <- ""     # <--- For any outliers, indicate in metadata Excel Table by creating a new column Titled "Removed". Input "Yes" for any samples removed
+Outliers_in_Data <- "No"              #  <--- Are there outliers in your data? "Yes" or "No"
+Outliers_Column_Name <- "Removed"     # <--- For any outliers, indicate in metadata Excel Table by creating a new column Titled "Removed". Input "Yes" for any samples removed
 
 
 # Q:  Do you have different Genders in your Data Set and do not want gender effect to influence your DEGs? 
-Genders_in_Data <- ""              #  <--- Are there different genders in your data? "Yes" or "No"
-Gender_Column_Name <- ""       #  <--- Name of your gender column. Recommend to name "Gender"
+Genders_in_Data <- "No"              #  <--- Are there different genders in your data? "Yes" or "No"
+Gender_Column_Name <- "Gender"       #  <--- Name of your gender column. Recommend to name "Gender"
 
 # Q:  Do you have Genes of Interest in your Data Set?
-Select_Genes_in_Data <- ""         #  <--- Are there different genders in your data? "Yes" or "No"
-Select_Genes_Column_Name <- ""  #  <--- Name of your "genes of interest" column. Recommend to name "Genes"
+Select_Genes_in_Data <- "No"         #  <--- Are there different genders in your data? "Yes" or "No"
+Select_Genes_Column_Name <- "Genes"  #  <--- Name of your "genes of interest" column. Recommend to name "Genes"
 
 
 # Q:  Do you have 2 different plates for this run that requires batch effect removal?
-Batch_effect <- ""         #  <--- Do your samples come from seperate plates? "Yes" or "No"
-Plate_Column_Name <- ""  #  <--- Name of your "plate" column. Recommend to name "Plate"
+Batch_effect <- "No"         #  <--- Do your samples come from seperate plates? "Yes" or "No"
+Plate_Column_Name <- "Plate"  #  <--- Name of your "plate" column. Recommend to name "Plate"
 #Location of Files for analysis (Plate 2 if applicable)
-Location_of_quant_Data_Files_PLATE2 <-""  #  <--- Find the location of the folder (sometimes called transcripts_quant) that contains folders for all samples with quant.sf file in them
-Name_of_Metadata_File_PLATE2 <- ""  # name of your metadata xlsx file. 
+# PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# 
+Location_of_quant_Data_Files_PLATE2 <-"/Users/Dania/Desktop/SK-4W7B Rafa, Wesley, Zhuoran, Neta, Xiaoming 5_03_2022/DM Analysis/transcripts_quant"  #  <--- Find the location of the folder (sometimes called transcripts_quant) that contains folders for all samples with quant.sf file in them
+Name_of_Metadata_File_PLATE2 <- "metadata_APP_Lgals3 inj_Astro_plate2.xlsx"  # name of your metadata xlsx file. 
+# PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# # PLATE 2 ONLY!!!# 
 
 
 
 # Statistics for Data Analysis (genes have to pass these requirements to be considered "DEGs")
-Statistics <- ""               # <---- either "pvalue" or "padj"
+Statistics <- "padj"               # <---- either "pvalue" or "padj"
 alpha <- 0.05                        # <---- alpha cutoff for statistical signifigance 
 logFC_cutoff <- 0                    # <--- logFC_cutoff (eg. 0.5)
 
 
 # Plots & Figures
-Do_you_want_heatmaps <- ""        # <----  "Yes" or "No"
-Do_you_want_results_files <- ""    # <----  "Yes" or "No"
-Do_you_want_barplots_for_select_genes <- ""      # <----  "Yes" or "No"
+Do_you_want_heatmaps <- "Yes"        # <----  "Yes" or "No"
+Do_you_want_results_files <- "Yes"    # <----  "Yes" or "No"
+Do_you_want_barplots_for_select_genes <- "No"      # <----  "Yes" or "No"
 
 #Hearmaps Specific Inputs
-heatmap_number_of_groups <-2 # number of clusters in heatmap
+heatmap_number_of_groups <- 2
 number_of_top_genes <- 100 # number of top genes in heatmap
 
 #Barplots Specific Inputs
-ErrorBars<-''  # <- 'SE' : standard error, 'SD': standard deviation (for barplots of specific genes)
+ErrorBars<-'SE'  # <- 'SE' : standard error, 'SD': standard deviation (for barplots of specific genes)
 # add as many colors as you want. Colors go in order. If you have 2 samples, color 1 and color 2 will be the colors for your bars. Some color options in link below
 # http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf
 color1<- 'lightsteelblue'
@@ -80,16 +85,13 @@ color9<-'palegreen2'
 color10<- 'palevioletred'
 
 
+#Order of metadata
+
+
 Z1 <- TRUE # <- If order of metadata 1 in your figures is flipped, change (from TRUE to FALSE) or  vice versa
 Z2 <- TRUE # <- If order of metadata 2 in your figures is flipped, change (from TRUE to FALSE) or  vice versa
 Z3 <- TRUE # <- If order of metadata 3 in your figures is flipped, change (from TRUE to FALSE) or  vice versa
 G1 <- TRUE # <- If order of gender in your figures is flipped, change (from TRUE to FALSE) or  vice versa
-
-#Order of metadata
-
-Is_Order_in_excelfile <- '' # Is there a column name that groups each group (from 1-x), number as you like to see on heatmap, with 1 to the far left 
-Order_column <- '' # name of order column in excel sheet
-
 
 # _____________________________________________________End of manual Input ___________________________________________________ 
 
@@ -122,114 +124,114 @@ dir.create("plots")
 dir.create("results")
 
 if (Batch_effect == "No") {
-
+  
   b <- function(name){
-  paste("metadata$",name, sep="")
-}
-
-Variable1 <- b(Metadata1_Column_Name)
-if (Number_of_variables_to_compare >= 2) {
-  Variable2 <- b(Metadata2_Column_Name)
-}
-
-if (Number_of_variables_to_compare == 3) {
-  Variable3 <- b(Metadata3_Column_Name)
-}
-
-if (Genders_in_Data == "Yes") {
-  Gender <- b(Gender_Column_Name)
-}
-
-if (Is_Order_in_excelfile == "Yes") {
-  order <- b(Order_column)
-}
-
-
-Position <- b(Position_Column_Name)
-Outliers<- b(Outliers_Column_Name)
-Genes<- b(Select_Genes_Column_Name)
-metadata <- read_xlsx(Name_of_Metadata_File)
-if (Outliers_in_Data == "Yes") {
-  idxOutliers <- grep("Yes", eval(parse(text = Outliers)))
-  metadata <-metadata[-(c(idxOutliers)), ]
-}
-
-if (Is_Order_in_excelfile == "No") {
-  if (Number_of_variables_to_compare == 1) {
-    if (Genders_in_Data == "No") {
-      sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)) )
-    }
-  }
-  if (Number_of_variables_to_compare == 1) {
-    if (Genders_in_Data == "Yes") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)))
-    }
+    paste("metadata$",name, sep="")
   }
   
-  
-  if (Number_of_variables_to_compare == 2) {
-    if (Genders_in_Data == "No") {
-      sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)) )
-    }
-  }
-  if (Number_of_variables_to_compare == 2) {
-    if (Genders_in_Data == "Yes") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)))
-    }
+  Variable1 <- b(Metadata1_Column_Name)
+  if (Number_of_variables_to_compare >= 2) {
+    Variable2 <- b(Metadata2_Column_Name)
   }
   
   if (Number_of_variables_to_compare == 3) {
-    if (Genders_in_Data == "No") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)) )
-    }
+    Variable3 <- b(Metadata3_Column_Name)
   }
-  if (Number_of_variables_to_compare == 3) {
-    if (Genders_in_Data == "Yes") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)) )
-    }
+  
+  if (Genders_in_Data == "Yes") {
+    Gender <- b(Gender_Column_Name)
   }
-}
-
-if (Is_Order_in_excelfile == "Yes") {
-  if (Number_of_variables_to_compare == 1) {
-    if (Genders_in_Data == "No") {
-      sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)),Order=eval(parse(text = order)) )
-    }
-  }
-  if (Number_of_variables_to_compare == 1) {
-    if (Genders_in_Data == "Yes") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)),Order=eval(parse(text = order)))
-    }
+  
+  if (Is_Order_in_excelfile == "Yes") {
+    order <- b(Order_column)
   }
   
   
-  if (Number_of_variables_to_compare == 2) {
-    if (Genders_in_Data == "No") {
-      sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)) ,Order=eval(parse(text = order)))
-    }
+  Position <- b(Position_Column_Name)
+  Outliers<- b(Outliers_Column_Name)
+  Genes<- b(Select_Genes_Column_Name)
+  metadata <- read_xlsx(Name_of_Metadata_File)
+  if (Outliers_in_Data == "Yes") {
+    idxOutliers <- grep("Yes", eval(parse(text = Outliers)))
+    metadata <-metadata[-(c(idxOutliers)), ]
   }
-  if (Number_of_variables_to_compare == 2) {
-    if (Genders_in_Data == "Yes") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)),Order=eval(parse(text = order)))
+  
+  if (Is_Order_in_excelfile == "No") {
+    if (Number_of_variables_to_compare == 1) {
+      if (Genders_in_Data == "No") {
+        sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)) )
+      }
+    }
+    if (Number_of_variables_to_compare == 1) {
+      if (Genders_in_Data == "Yes") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)))
+      }
+    }
+    
+    
+    if (Number_of_variables_to_compare == 2) {
+      if (Genders_in_Data == "No") {
+        sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)) )
+      }
+    }
+    if (Number_of_variables_to_compare == 2) {
+      if (Genders_in_Data == "Yes") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)))
+      }
+    }
+    
+    if (Number_of_variables_to_compare == 3) {
+      if (Genders_in_Data == "No") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)) )
+      }
+    }
+    if (Number_of_variables_to_compare == 3) {
+      if (Genders_in_Data == "Yes") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)) )
+      }
     }
   }
   
-  if (Number_of_variables_to_compare == 3) {
-    if (Genders_in_Data == "No") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)) ,Order=eval(parse(text = order)))
+  if (Is_Order_in_excelfile == "Yes") {
+    if (Number_of_variables_to_compare == 1) {
+      if (Genders_in_Data == "No") {
+        sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)),Order=eval(parse(text = order)) )
+      }
+    }
+    if (Number_of_variables_to_compare == 1) {
+      if (Genders_in_Data == "Yes") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)),Order=eval(parse(text = order)))
+      }
+    }
+    
+    
+    if (Number_of_variables_to_compare == 2) {
+      if (Genders_in_Data == "No") {
+        sample_data <- data.frame(position=eval(parse(text = Position)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)) ,Order=eval(parse(text = order)))
+      }
+    }
+    if (Number_of_variables_to_compare == 2) {
+      if (Genders_in_Data == "Yes") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)),Order=eval(parse(text = order)))
+      }
+    }
+    
+    if (Number_of_variables_to_compare == 3) {
+      if (Genders_in_Data == "No") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)) ,Order=eval(parse(text = order)))
+      }
+    }
+    if (Number_of_variables_to_compare == 3) {
+      if (Genders_in_Data == "Yes") {
+        sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)),Order=eval(parse(text = order)) )
+      }
     }
   }
-  if (Number_of_variables_to_compare == 3) {
-    if (Genders_in_Data == "Yes") {
-      sample_data <- data.frame(position=eval(parse(text = Position)),gender=eval(parse(text = Gender)), variableA = eval(parse(text = Variable1)), variableB = eval(parse(text = Variable2)), variableC = eval(parse(text = Variable3)),Order=eval(parse(text = order)) )
-    }
-  }
-}
-all_files <- list.files(Location_of_quant_Data_Files, full.names= T, pattern=NULL, all.files= FALSE)
-quant_files <- file.path(all_files, "quant.sf")
-position_list <- paste0(sample_data$position, collapse = '|')
-sample_files <- grep(position_list, quant_files, value = TRUE)
-sample_data <- na.omit(sample_data) 
+  all_files <- list.files(Location_of_quant_Data_Files, full.names= T, pattern=NULL, all.files= FALSE)
+  quant_files <- file.path(all_files, "quant.sf")
+  position_list <- paste0(sample_data$position, collapse = '|')
+  sample_files <- grep(position_list, quant_files, value = TRUE)
+  sample_data <- na.omit(sample_data) 
 }
 
 
@@ -246,7 +248,7 @@ if (Batch_effect == "Yes") {
   Variable1_1 <- b1(Metadata1_Column_Name)
   Variable1_2 <- b2(Metadata1_Column_Name)
   
-    if (Number_of_variables_to_compare >= 2) {
+  if (Number_of_variables_to_compare >= 2) {
     Variable2_1 <- b1(Metadata2_Column_Name)
     Variable2_2 <- b2(Metadata2_Column_Name)
   }
@@ -275,7 +277,7 @@ if (Batch_effect == "Yes") {
   Batch1<- b1(Plate_Column_Name)
   Batch2<- b2(Plate_Column_Name)
   
-
+  
   metadata1 <- read_xlsx(Name_of_Metadata_File)
   metadata2 <- read_xlsx(Name_of_Metadata_File_PLATE2)
   if (Outliers_in_Data == "Yes") {
@@ -344,7 +346,7 @@ if (Batch_effect == "Yes") {
       }
     }
   }
-
+  
   if (Is_Order_in_excelfile == "Yes") {
     if (Number_of_variables_to_compare == 1) {
       if (Genders_in_Data == "No") {
@@ -404,7 +406,7 @@ if (Batch_effect == "Yes") {
       }
     }
   }
-
+  
   sample_data <- rbind(sample_data1,sample_data2)
   all_files1 <- list.files(Location_of_quant_Data_Files, full.names= T, pattern=NULL, all.files= FALSE)
   quant_files1 <- file.path(all_files1, "quant.sf")
@@ -442,62 +444,128 @@ txi <- tximport(sample_files, type="salmon", tx2gene=tx2gene, ignoreTxVersion = 
 txicounts<-as.matrix(txi$counts)
 mode(txicounts) <- 'integer'
 
+write.xlsx(as.data.frame(as.matrix(txi$counts)), paste("results/CountsTxi_",filenames2,"_comparison.xlsx",sep= "")
+           , rowNames= T, overwrite = T)
+
 if (Batch_effect == "Yes") {
-count_batch <- sample_data$batch
-count_adjusted <- ComBat_seq(txicounts, batch = count_batch, group = NULL)
-tpm_adjusted <- ComBat_seq(txi$abundance, batch = count_batch, group = NULL)
-txicounts<- count_adjusted
+  count_batch <- sample_data$batch
+  count_adjusted <- ComBat_seq(txicounts, batch = count_batch, group = NULL)
+  tpm_adjusted <- ComBat_seq(txi$abundance, batch = count_batch, group = NULL)
+  txicounts<- count_adjusted
+  if (Number_of_variables_to_compare == 1) {
+    if (Genders_in_Data == "No") {
+      dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA )  # condition * disease means condition + disease + condition:disease
+    }
+  }
+  if (Number_of_variables_to_compare == 1) {
+    if (Genders_in_Data == "Yes") {
+      loadError=F
+      a=try({dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*gender )})  # condition * disease means condition + disease + condition:disease
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+gender )  # condition * disease means condition + disease + condition:disease
+      }
+    }
+  }
+  
+  if (Number_of_variables_to_compare == 2) {
+    if (Genders_in_Data == "No") {
+      loadError=F
+      a=try({dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*variableB)})
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+variableB)
+      }
+    }
+  }
+  
+  
+  if (Number_of_variables_to_compare == 2) {
+    if (Genders_in_Data == "Yes") {
+      loadError=F
+      a=try({ dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*variableB+ variableA*gender+ variableB*gender )})
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+variableB+gender)  # condition * disease means condition + disease + condition:disease
+      }
+    }
+  }
+  
+  if (Number_of_variables_to_compare == 3) {
+    if (Genders_in_Data == "No") {
+      loadError=F
+      a=try({ dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*variableB+ variableA*variableC + variableB*variableC )})
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+variableB+variableC )  # condition * disease means condition + disease + condition:disease
+      }
+    }
+  }
+  if (Number_of_variables_to_compare == 3) {
+    if (Genders_in_Data == "Yes") {
+      loadError=F
+      a=try({ dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*variableB+ variableA*variableC + variableB*variableC+ variableA*gender+ variableB*gender + variableC*gender )})
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+variableB+variableC+gender)  # condition * disease means condition + disease + condition:disease
+      }
+    }
+  }
+  
 }
 
 #count_batch <- sample_data$plate
 #count_adjusted <- ComBat_seq(txicounts, batch = count_batch, group = NULL)
 #tpm_adjusted <- ComBat_seq(txi$abundance, batch = count_batch, group = NULL)
-if (Number_of_variables_to_compare == 1) {
-  if (Genders_in_Data == "No") {
-    dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA )  # condition * disease means condition + disease + condition:disease
-  }
-}
-if (Number_of_variables_to_compare == 1) {
-  if (Genders_in_Data == "Yes") {
-    loadError=F
-    a=try({dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*gender )})  # condition * disease means condition + disease + condition:disease
-    loadError <- (is(a, 'try-error')|is(a,'error'))  
-    if(loadError==TRUE){
-      dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+gender )  # condition * disease means condition + disease + condition:disease
+if (Batch_effect == "No") {
+  
+  if (Number_of_variables_to_compare == 1) {
+    if (Genders_in_Data == "No") {
+      dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA )  # condition * disease means condition + disease + condition:disease
     }
   }
-}
-
-if (Number_of_variables_to_compare == 2) {
-  if (Genders_in_Data == "No") {
-    loadError=F
-    a=try({dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*variableB)})
-    loadError <- (is(a, 'try-error')|is(a,'error'))  
-    if(loadError==TRUE){
-      dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+variableB)
+  if (Number_of_variables_to_compare == 1) {
+    if (Genders_in_Data == "Yes") {
+      loadError=F
+      a=try({dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA*gender )})  # condition * disease means condition + disease + condition:disease
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA+gender )  # condition * disease means condition + disease + condition:disease
+      }
     }
   }
-}
-
-
-if (Number_of_variables_to_compare == 2) {
-  if (Genders_in_Data == "Yes") {
-    loadError=F
-    a=try({ dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*variableB+ variableA*gender+ variableB*gender )})
-    loadError <- (is(a, 'try-error')|is(a,'error'))  
-    if(loadError==TRUE){
-      dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+variableB+gender)  # condition * disease means condition + disease + condition:disease
+  
+  if (Number_of_variables_to_compare == 2) {
+    if (Genders_in_Data == "No") {
+      loadError=F
+      a=try({dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA*variableB)})
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA+variableB)
+      }
     }
   }
-}
-
-if (Number_of_variables_to_compare == 3) {
-  if (Genders_in_Data == "No") {
-    loadError=F
-    a=try({ dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA*variableB+ variableA*variableC + variableB*variableC )})
-    loadError <- (is(a, 'try-error')|is(a,'error'))  
-    if(loadError==TRUE){
-      dds <- DESeqDataSetFromMatrix(txicounts, colData = sample_data, design =~ variableA+variableB+variableC )  # condition * disease means condition + disease + condition:disease
+  
+  
+  if (Number_of_variables_to_compare == 2) {
+    if (Genders_in_Data == "Yes") {
+      loadError=F
+      a=try({ dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA*variableB+ variableA*gender+ variableB*gender )})
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA+variableB+gender)  # condition * disease means condition + disease + condition:disease
+      }
+    }
+  }
+  
+  if (Number_of_variables_to_compare == 3) {
+    if (Genders_in_Data == "No") {
+      loadError=F
+      a=try({ dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA*variableB+ variableA*variableC + variableB*variableC )})
+      loadError <- (is(a, 'try-error')|is(a,'error'))  
+      if(loadError==TRUE){
+        dds <- DESeqDataSetFromTximport(txi, colData = sample_data, design =~ variableA+variableB+variableC )  # condition * disease means condition + disease + condition:disease
+      }
     }
   }
 }
@@ -1252,7 +1320,7 @@ if (Do_you_want_results_files == "Yes") {
   
   write.xlsx(as.data.frame(sig_res), 
              paste("results/DifExpGenes_",filenames,"_comparison.xlsx",sep= ""),
-             , overwrite = T)
+             overwrite = T)
 }
 
 name_list <- c('gene', colnames(mat1))
@@ -1377,30 +1445,30 @@ if (Select_Genes_in_Data == "Yes") {
   sample <- sample_data
   
   
-
+  
   cal_z_score <- function(x){
     (x - mean(x)) / sd(x)
   }
   data_norm2 <- t(apply(round(cts_SpecificGenes), 1, cal_z_score))
-
+  
   heatmap_genesofinterest<- pheatmap(data_norm2,
-                              color = colorRampPalette(c("navy", "white", "firebrick3"))(48),
-                              breaks = seq(-2, 2, by = 0.1),
-                              kmeans_k = NA,
-                              cluster_rows = T,
-                              cutree_row = 1,
-                              cluster_cols = F,
-                              gaps_col= gaps,
-                              border_color = NA,
-                              legend = TRUE,
-                              show_rownames = T,
-                              treeheight_col = 0,
-                              treeheight_row = 50,
-                              fontsize = 7,
-                              scale = 'row'
+                                     color = colorRampPalette(c("navy", "white", "firebrick3"))(48),
+                                     breaks = seq(-2, 2, by = 0.1),
+                                     kmeans_k = NA,
+                                     cluster_rows = T,
+                                     cutree_row = 1,
+                                     cluster_cols = F,
+                                     gaps_col= gaps,
+                                     border_color = NA,
+                                     legend = TRUE,
+                                     show_rownames = T,
+                                     treeheight_col = 0,
+                                     treeheight_row = 50,
+                                     fontsize = 7,
+                                     scale = 'row'
   )
   
-  pdf(file = paste0("plots/heatmap_Genes_of_Interest",filenames,"_comparison.pdf"), pointsize = 10, width = 7, height =11)
+  pdf(file = paste0("plots/heatmap_Genes_of_Interest",filenames,"_comparison.pdf"), pointsize = 10, width = 5, height =10)
   print(heatmap_genesofinterest)
   dev.off()
   
