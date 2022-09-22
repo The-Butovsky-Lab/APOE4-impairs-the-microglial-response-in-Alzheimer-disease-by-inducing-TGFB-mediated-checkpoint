@@ -1,1 +1,1 @@
-# CAF: APOE4_MG_Astrocytes_Crosstalk_AD
+# CAF: APOE4 impairs the microglial response in Alzheimer’s disease by inducing TGFB-mediated checkpoints
